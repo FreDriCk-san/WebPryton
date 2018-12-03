@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WebPryton
 {
-    public class CustomErrorResponse
+    public class CustomResponse
     {
         public string Message { get; set; }
         public string Description { get; set; }

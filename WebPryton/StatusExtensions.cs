@@ -8,19 +8,38 @@ namespace WebPryton
 {
     public static class StatusExtensions
     {
-        public static IApplicationBuilder UseToken(this IApplicationBuilder builder)
-        {
-            return builder.UseMiddleware<StatusMiddleware>();
-        }
-
-        public static IApplicationBuilder ApiIsNotUsed(this IApplicationBuilder builder)
-        {
-            return builder.UseMiddleware<Middleware.WithoutApi>();
-        }
 
         public static IApplicationBuilder CheckBadRequest(this IApplicationBuilder builder)
         {
             return builder.UseMiddleware<Middleware.BadRequest>();
+        }
+
+
+
+        public static IApplicationBuilder CheckUnauthorized(this IApplicationBuilder builder)
+        {
+            return builder.UseMiddleware<Middleware.Unauthorized>();
+        }
+
+        
+        
+        public static IApplicationBuilder CheckForbidden(this IApplicationBuilder builder)
+        {
+            return builder.UseMiddleware<Middleware.Forbidden>();
+        }
+
+
+
+        public static IApplicationBuilder CheckNotFound(this IApplicationBuilder builder)
+        {
+            return builder.UseMiddleware<Middleware.NotFound>();
+        }
+
+
+
+        public static IApplicationBuilder UseOK(this IApplicationBuilder builder)
+        {
+            return builder.UseMiddleware<Middleware.OK>();
         }
     }
 }

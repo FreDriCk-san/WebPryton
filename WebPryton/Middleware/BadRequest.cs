@@ -31,12 +31,10 @@ namespace WebPryton.Middleware
             {
                 using (var reader = new StreamReader(context.Request.Body, Encoding.UTF8))
                 {
-                    var content = reader.ReadToEnd();
+                    var content = await reader.ReadToEndAsync();
 
                     var accountProperties = typeof(Models.Account).GetProperties(
-                        BindingFlags.FlattenHierarchy |
                         BindingFlags.Instance |
-                        BindingFlags.NonPublic |
                         BindingFlags.Public |
                         BindingFlags.Static).ToList();
 
@@ -68,32 +66,16 @@ namespace WebPryton.Middleware
                             }
                         }
                     }
+
+                    Util.MultipleActions.TransferRequest(context, content);
                 }
 
                 await Next.Invoke(context);
             }
             catch(Exception exception)
             {
-                await HandleExceptionAsync(context, exception);
+                await Util.MultipleActions.HandleExceptionAsync(context, exception, HttpStatusCode.BadRequest);
             }
-        }
-
-
-
-        private async Task HandleExceptionAsync(HttpContext context, Exception exception)
-        {
-            var response = context.Response;
-            var statusCode = (int)HttpStatusCode.BadRequest;
-            var message = exception.Message;
-            var description = HttpStatusCode.BadRequest.ToString();
-
-            response.ContentType = "application/json";
-            response.StatusCode = statusCode;
-            await response.WriteAsync(JsonConvert.SerializeObject(new CustomErrorResponse
-            {
-                Message = message,
-                Description = description
-            }));
         }
 
 
@@ -106,5 +88,6 @@ namespace WebPryton.Middleware
                    (token.Type == JTokenType.String && token.ToString() == String.Empty) ||
                    (token.Type == JTokenType.Null);
         }
+
     }
 }

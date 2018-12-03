@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using Microsoft.AspNetCore.Builder;
@@ -9,6 +11,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
 
 namespace WebPryton
 {
@@ -55,26 +58,55 @@ namespace WebPryton
             app.MapWhen(context => context.Request.Query["api"] == "v1", firstApi =>
             {
                 firstApi.CheckBadRequest();
-                firstApi.UseToken();
+                firstApi.CheckUnauthorized();
+                firstApi.CheckForbidden();
+                firstApi.CheckNotFound();
+                firstApi.UseOK();
             });
 
 
             // For api version 2.0 (Status Code: 200 [with full description of execution])
             app.MapWhen(context => context.Request.Query["api"] == "v2", secondApi =>
             {
-                secondApi.UseToken();
+                // CHANGE!!!
+
+                secondApi.Use(async (context, next) =>
+                {
+                    var response = context.Response;
+                    response.ContentType = "application/json";
+                    response.StatusCode = 200;
+
+                    var badRequest = Task.Run(async () =>
+                    {
+                        await next.Invoke();
+                    });
+
+                    await response.WriteAsync(JsonConvert.SerializeObject(new CustomResponse
+                    {
+                        Message = "OK!",
+                        Description = String.Empty
+                    }));
+
+                    
+                    await next.Invoke();
+                    await next.Invoke();
+                    await next.Invoke();
+                });
+
+                secondApi.CheckBadRequest();
+                secondApi.CheckUnauthorized();
+                secondApi.CheckForbidden();
+                secondApi.CheckNotFound();
             });
 
 
-            app.ApiIsNotUsed();
 
-
-            //app.UseMvc(routes =>
-            //{
-            //    routes.MapRoute(
-            //        name: "default",
-            //        template: "{controller=Home}/{action=Index}/{id?}");
-            //});
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }
