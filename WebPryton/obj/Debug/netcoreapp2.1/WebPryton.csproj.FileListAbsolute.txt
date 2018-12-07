@@ -30,3 +30,5 @@ D:\Visual Studio Projects\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryt
 D:\Visual Studio Projects\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.dll
 D:\Visual Studio Projects\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.pdb
 D:\Visual Studio Projects\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.csproj.CopyComplete
+D:\Visual Studio Projects\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.Resources.resources
+D:\Visual Studio Projects\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.csproj.GenerateResource.cache
