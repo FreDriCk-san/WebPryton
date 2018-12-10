@@ -10,22 +10,6 @@ namespace WebPryton.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        //// GET: api/User
-        //[HttpGet]
-        //public IEnumerable<string> GetUsers()
-        //{
-        //    return new string[] { "user1", "user2" };
-        //}
-
-        //// GET api/User/id
-        //[HttpGet("{id}")]
-        //public IActionResult GetUser(int id)
-        //{
-        //    return Ok($"user {id}");
-        //}
-
-
-
         // GET api/User/bool
         [HttpGet("bool")]
         public bool GetUserBool()
@@ -61,6 +45,16 @@ namespace WebPryton.Controllers
             return null;
         }
 
+        // GET api/User/object
+        [HttpGet("object")]
+        public object GetUserObject()
+        {
+            var obj = new Object();
+            obj = new string[] { "user1", "user2", "user3" };
+            return obj;
+        }
+
+
         // GET api/User/badRequest
         [HttpGet("badRequest")]
         public ActionResult GetUserBadRequest()
@@ -88,28 +82,5 @@ namespace WebPryton.Controllers
         {
             return StatusCode(401, "User was unauthorized!");
         }
-
-
-
-
-
-        //// POST api/User/Create
-        //[HttpPost("Create")]
-        //public IActionResult CreateUser([FromBody]string value)
-        //{
-        //    return Ok("Created:"+value);
-        //}
-
-        //// PUT api/User/5
-        //[HttpPut("{id}")]
-        //public void UpdateUser(int id, [FromBody]string value)
-        //{
-        //}
-
-        //// DELETE api/User/5
-        //[HttpDelete("{id}")]
-        //public void DeleteUser(int id)
-        //{
-        //}
     }
 }

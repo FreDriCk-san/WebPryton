@@ -27,8 +27,6 @@ namespace WebPryton.MessaggingToSlack
             });
         }
 
-
-
         public static async Task SendAsync(Exception exception)
         {
             //var proxy = ProxyActivation.CreateConnection();
@@ -60,8 +58,6 @@ namespace WebPryton.MessaggingToSlack
 
             var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
         }
-
-
 
         private static string ExceptionSerializer(Exception exception)
         {
@@ -96,12 +92,6 @@ namespace WebPryton.MessaggingToSlack
             return exceptionBuilder.ToString();
         }
     }
-
-
-
-
-
-
 
     static class Extensions
     {

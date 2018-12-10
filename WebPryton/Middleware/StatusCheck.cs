@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
+using System;
 using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using Newtonsoft.Json;
 
 namespace WebPryton.Middleware
 {
@@ -54,8 +54,6 @@ namespace WebPryton.Middleware
             }
         }
 
-
-
         private async Task MakeResponseAsync(HttpContext context, object content, Stream originalBody, HttpStatusCode? httpStatusCode = HttpStatusCode.OK)
         {
             context.Response.StatusCode = (int)HttpStatusCode.OK;
@@ -64,7 +62,7 @@ namespace WebPryton.Middleware
             var json = JsonConvert.SerializeObject(new CustomResponse
             {
                 StatusCode = (int)httpStatusCode,
-                Message = content?.ToString(),
+                Message = content,
                 Description = httpStatusCode.ToString()
             });
 
