@@ -1,5 +1,3 @@
-using System;
-
 namespace WebPryton.Models
 {
     public class ErrorViewModel

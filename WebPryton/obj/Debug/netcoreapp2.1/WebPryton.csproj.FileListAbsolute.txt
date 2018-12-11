@@ -30,3 +30,39 @@ D:\Visual Studio Projects\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryt
 D:\Visual Studio Projects\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.dll
 D:\Visual Studio Projects\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.pdb
 D:\Visual Studio Projects\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.csproj.CopyComplete
+D:\Visual Studio Projects\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.Resources.resources
+D:\Visual Studio Projects\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.csproj.GenerateResource.cache
+E:\C#\WebPryton\WebPryton\bin\Debug\netcoreapp2.1\WebPryton.deps.json
+E:\C#\WebPryton\WebPryton\bin\Debug\netcoreapp2.1\WebPryton.runtimeconfig.json
+E:\C#\WebPryton\WebPryton\bin\Debug\netcoreapp2.1\WebPryton.runtimeconfig.dev.json
+E:\C#\WebPryton\WebPryton\bin\Debug\netcoreapp2.1\WebPryton.dll
+E:\C#\WebPryton\WebPryton\bin\Debug\netcoreapp2.1\WebPryton.pdb
+E:\C#\WebPryton\WebPryton\bin\Debug\netcoreapp2.1\WebPryton.Views.dll
+E:\C#\WebPryton\WebPryton\bin\Debug\netcoreapp2.1\WebPryton.Views.pdb
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.csprojAssemblyReference.cache
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.Resources.resources
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.csproj.GenerateResource.cache
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.csproj.CoreCompileInputs.cache
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.RazorAssemblyInfo.cache
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.RazorAssemblyInfo.cs
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.AssemblyInfoInputs.cache
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.AssemblyInfo.cs
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.TagHelpers.input.cache
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.TagHelpers.output.cache
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.RazorCoreGenerate.cache
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.RazorTargetAssemblyInfo.cache
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.RazorTargetAssemblyInfo.cs
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.Views.pdb
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.dll
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.pdb
+E:\C#\WebPryton\WebPryton\obj\Debug\netcoreapp2.1\WebPryton.csproj.CopyComplete

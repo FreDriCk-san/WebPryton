@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WebPryton.Middleware;
 
 namespace WebPryton
 {
@@ -32,7 +29,9 @@ namespace WebPryton
             });
 
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc(options =>
+                options.OutputFormatters.RemoveType<HttpNoContentOutputFormatter>()
+                ).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,31 +49,9 @@ namespace WebPryton
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
+            app.UseStatusCheck();
 
-            // For api version 1.0 (Status Codes: 200, 400, 500 etc)
-            app.MapWhen(context => context.Request.Query["api"] == "v1", firstApi =>
-            {
-                firstApi.CheckBadRequest();
-                firstApi.UseToken();
-            });
-
-
-            // For api version 2.0 (Status Code: 200 [with full description of execution])
-            app.MapWhen(context => context.Request.Query["api"] == "v2", secondApi =>
-            {
-                secondApi.UseToken();
-            });
-
-
-            app.ApiIsNotUsed();
-
-
-            //app.UseMvc(routes =>
-            //{
-            //    routes.MapRoute(
-            //        name: "default",
-            //        template: "{controller=Home}/{action=Index}/{id?}");
-            //});
+            app.UseMvc();
         }
     }
 }
